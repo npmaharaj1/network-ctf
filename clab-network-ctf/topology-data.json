@@ -1,0 +1,229 @@
+{
+  "name": "network-ctf",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-c29dc53126ee",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "ipv6-subnet": "3fff:172:20:20::/64",
+        "ipv6-gw": "3fff:172:20:20::1",
+        "mtu": 1500,
+        "external-access": true
+      }
+    }
+  },
+  "nodes": {
+    "companyserver": {
+      "index": "0",
+      "shortname": "companyserver",
+      "longname": "clab-network-ctf-companyserver",
+      "fqdn": "companyserver.network-ctf.io",
+      "group": "",
+      "labdir": "/home/nishant/Projects/network-ctf/clab-network-ctf/companyserver",
+      "kind": "linux",
+      "image": "alpine:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::3",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-c29dc53126ee",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/nishant/Projects/network-ctf/clab-network-ctf/companyserver",
+        "clab-node-name": "companyserver",
+        "clab-node-type": "",
+        "clab-owner": "nishant",
+        "clab-topo-file": "/home/nishant/Projects/network-ctf/clab_topology.yml",
+        "containerlab": "network-ctf"
+      },
+      "port-bindings": [
+      ]
+    },
+    "frrouting": {
+      "index": "1",
+      "shortname": "frrouting",
+      "longname": "clab-network-ctf-frrouting",
+      "fqdn": "frrouting.network-ctf.io",
+      "group": "",
+      "labdir": "/home/nishant/Projects/network-ctf/clab-network-ctf/frrouting",
+      "kind": "linux",
+      "image": "frrouting/frr:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.6",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::6",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-c29dc53126ee",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/nishant/Projects/network-ctf/clab-network-ctf/frrouting",
+        "clab-node-name": "frrouting",
+        "clab-node-type": "",
+        "clab-owner": "nishant",
+        "clab-topo-file": "/home/nishant/Projects/network-ctf/clab_topology.yml",
+        "containerlab": "network-ctf"
+      },
+      "port-bindings": [
+      ]
+    },
+    "itadmin": {
+      "index": "2",
+      "shortname": "itadmin",
+      "longname": "clab-network-ctf-itadmin",
+      "fqdn": "itadmin.network-ctf.io",
+      "group": "",
+      "labdir": "/home/nishant/Projects/network-ctf/clab-network-ctf/itadmin",
+      "kind": "linux",
+      "image": "alpine:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.5",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::5",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-c29dc53126ee",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/nishant/Projects/network-ctf/clab-network-ctf/itadmin",
+        "clab-node-name": "itadmin",
+        "clab-node-type": "",
+        "clab-owner": "nishant",
+        "clab-topo-file": "/home/nishant/Projects/network-ctf/clab_topology.yml",
+        "containerlab": "network-ctf"
+      },
+      "port-bindings": [
+      ]
+    },
+    "shiftmanager002": {
+      "index": "3",
+      "shortname": "shiftmanager002",
+      "longname": "clab-network-ctf-shiftmanager002",
+      "fqdn": "shiftmanager002.network-ctf.io",
+      "group": "",
+      "labdir": "/home/nishant/Projects/network-ctf/clab-network-ctf/shiftmanager002",
+      "kind": "linux",
+      "image": "alpine:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.4",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::4",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-c29dc53126ee",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/nishant/Projects/network-ctf/clab-network-ctf/shiftmanager002",
+        "clab-node-name": "shiftmanager002",
+        "clab-node-type": "",
+        "clab-owner": "nishant",
+        "clab-topo-file": "/home/nishant/Projects/network-ctf/clab_topology.yml",
+        "containerlab": "network-ctf"
+      },
+      "port-bindings": [
+      ]
+    },
+    "worker504": {
+      "index": "4",
+      "shortname": "worker504",
+      "longname": "clab-network-ctf-worker504",
+      "fqdn": "worker504.network-ctf.io",
+      "group": "",
+      "labdir": "/home/nishant/Projects/network-ctf/clab-network-ctf/worker504",
+      "kind": "linux",
+      "image": "alpine:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::2",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-c29dc53126ee",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/nishant/Projects/network-ctf/clab-network-ctf/worker504",
+        "clab-node-name": "worker504",
+        "clab-node-type": "",
+        "clab-owner": "nishant",
+        "clab-topo-file": "/home/nishant/Projects/network-ctf/clab_topology.yml",
+        "containerlab": "network-ctf"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "a": {
+        "node": "frrouting",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:10:98:6a",
+        "peer": "z"
+      },
+      "z": {
+        "node": "worker504",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:ff:f3:15",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "frrouting",
+        "interface": "eth2",
+        "mac": "aa:c1:ab:ee:de:79",
+        "peer": "z"
+      },
+      "z": {
+        "node": "shiftmanager002",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:6b:cd:21",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "frrouting",
+        "interface": "eth3",
+        "mac": "aa:c1:ab:e9:1e:1b",
+        "peer": "z"
+      },
+      "z": {
+        "node": "companyserver",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:fd:c2:e5",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "frrouting",
+        "interface": "eth4",
+        "mac": "aa:c1:ab:43:d7:f2",
+        "peer": "z"
+      },
+      "z": {
+        "node": "itadmin",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:14:35:ed",
+        "peer": "a"
+      }
+    }
+  ]
+}

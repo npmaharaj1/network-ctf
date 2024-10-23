@@ -1,0 +1,47 @@
+name: network-ctf
+
+topology:
+    nodes:
+      # Networking
+        frrouting:
+            kind: linux
+            image: frrouting/frr:latest
+            exec:
+              - sh /scripts/routerinit.sh
+            binds:
+              - ./scripts:/scripts
+        
+        # Computing
+        worker504:
+            kind: linux
+            image: alpine:latest
+            exec:
+              - sh /scripts/alpinegeneralsetup.sh
+            binds:
+              - ./scripts:/scripts
+        shiftmanager002:
+            kind: linux
+            image: alpine:latest
+            exec:
+              - sh /scripts/alpinegeneralsetup.sh
+            binds:
+              - ./scripts:/scripts
+        companyserver:
+            kind: linux
+            image: alpine:latest
+            exec:
+              - sh /scripts/alpinegeneralsetup.sh
+            binds:
+              - ./scripts:/scripts
+        itadmin:
+            kind: linux
+            image: alpine:latest
+            exec:
+              - sh /scripts/alpinegeneralsetup.sh
+            binds:
+              - ./scripts:/scripts 
+    links:
+        - endpoints: ['frrouting:eth1', 'worker504:eth1']
+        - endpoints: ['frrouting:eth2', 'shiftmanager002:eth1']
+        - endpoints: ['frrouting:eth3', 'companyserver:eth1']
+        - endpoints: ['frrouting:eth4', 'itadmin:eth1']
