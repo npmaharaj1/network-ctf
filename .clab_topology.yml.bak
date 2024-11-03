@@ -23,6 +23,7 @@ topology:
       image: alpine:latest
       exec:
         - sh /scripts/alpinegeneralsetup.sh
+        - sh /scripts/companyserver.sh
       binds:
         - ./scripts:/scripts
     itadmin:
@@ -30,6 +31,7 @@ topology:
       image: alpine:latest
       exec:
         - sh /scripts/alpinegeneralsetup.sh
+        - sh /scripts/itadmin.sh
       binds:
         - ./scripts:/scripts 
     workervswitch:
@@ -46,7 +48,6 @@ topology:
         - ovs-vsctl add-br br0
         - ovs-vsctl add-port br0 eth1
         - ovs-vsctl add-port br0 eth2
-        - ovs-vsctl add-port br0 eth3
     highervswitch:
       kind: linux
       image: alpine
@@ -61,7 +62,6 @@ topology:
         - ovs-vsctl add-br br0
         - ovs-vsctl add-port br0 eth1
         - ovs-vsctl add-port br0 eth2
-        - ovs-vsctl add-port br0 eth3
     itvswitch:
       kind: linux
       image: alpine

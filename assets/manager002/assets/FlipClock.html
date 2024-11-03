@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html manifest="cache.manifest" class="fullscreen-capable"><script src="FlipClock_files/fido2-page-script.js"></script><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    <title>FlipClock</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <link rel="icon" type="image/x-icon" href="https://flipclock.us/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="https://flipclock.us/images/logos/FlipClock_128_full.png" sizes="128x128">
+    <link rel="shortcut icon" type="image/x-icon" href="https://flipclock.us/images/logos/FlipClock_64_full.png" sizes="64x64">
+    <link rel="shortcut icon" type="image/x-icon" href="https://flipclock.us/images/logos/FlipClock_32_full.png" sizes="32x32">
+
+    <script type="text/javascript" src="FlipClock_files/package.js"></script><style type="text/css"></style>
+    <!--<script type="module" src="init.js"></script>-->
+
+    <link rel="stylesheet" type="text/css" href="FlipClock_files/font.css">
+    <link rel="stylesheet" type="text/css" href="FlipClock_files/app.css">
+</head>
+
+<body id="body" class="font_default">
+    <div id="wrapper">
+        <div id="toolbarContainer" class="bar_container"></div>
+        <div id="container" class="blink_transition"><div class="time_box layout_time_ampm" style="top: 47.5px;"><div class="digit time hour_1" number=""><div class="card back"><div class="top"></div><div class="bottom"><div class="inner"></div></div></div><div class="card active"><div class="front"><div class="top"></div></div><div class="back"><div class="bottom"><div class="inner"></div></div></div></div></div><div class="digit time hour_2" number="9"><div class="card back"><div class="top">9</div><div class="bottom"><div class="inner">9</div></div></div><div class="card active"><div class="front"><div class="top">9</div></div><div class="back"><div class="bottom"><div class="inner">9</div></div></div></div></div><div class="digit time minute_1" number="4"><div class="card back"><div class="top">4</div><div class="bottom"><div class="inner">4</div></div></div><div class="card active"><div class="front"><div class="top">4</div></div><div class="back"><div class="bottom"><div class="inner">4</div></div></div></div></div><div class="digit time minute_2" number="0"><div class="card back"><div class="top">0</div><div class="bottom"><div class="inner">0</div></div></div><div class="card active"><div class="front"><div class="top">0</div></div><div class="back"><div class="bottom"><div class="inner">0</div></div></div></div></div><div class="digit ampm" number="am"><div class="card back"><div class="top">am</div><div class="bottom"><div class="inner">am</div></div></div><div class="card active"><div class="front"><div class="top">am</div></div><div class="back"><div class="bottom"><div class="inner">am</div></div></div></div></div></div></div>
+        <div id="toolbar" class="bar">
+            <a href="#/" class="clock button icon icon_clock"><span class="label">Clock</span><div class="button_inner"></div></a>
+            <a dialog="countdown" class="countdown button icon icon_countdown"><span class="label">Countdown</span><div class="button_inner"></div></a>
+
+            <a dialog="about" class="button button_right icon icon_star"><span class="label">About</span><div class="button_inner"></div></a>
+            <a dialog="options" class="button button_right icon icon_options"><span class="label">Options</span><div class="button_inner"></div></a>
+            <a action="fullscreen" class="button button_right icon icon_fullscreen"><span class="label">Fullscreen</span><div class="button_inner"></div></a>
+        </div>
+    </div>
+
+
+<div id="countdown" class="dialog_container">
+    <div class="countdown dialog">
+        <div class="dialog_titlebar">
+            <button action="hide_dialog" class="close button button_right">x</button>
+            <h2>Countdown</h2>
+        </div>
+        <div class="dialog_content">
+            <div class="selectors"><div class="selector"><div class="controls"><button href="javascript:;" class="button icon_up" action="countdown_hour_up" interval="400"><span class="inner"></span></button><div class="value"><span id="countdown_hour">0</span></div><button class="button icon_down" action="countdown_hour_down" interval="400"><span class="inner"></span></button></div></div><div class="selector"><div class="controls"><button href="javascript:;" class="button icon_up" action="countdown_minute_up" interval="400"><span class="inner"></span></button><div class="value"><span id="countdown_min">0</span></div><button href="javascript:;" class="button icon_down" action="countdown_minute_down" interval="400"><span class="inner"></span></button></div></div><div class="selector"><div class="controls"><button href="javascript:;" class="button icon_up" action="countdown_second_up" interval="400"><span class="inner"></span></button><div class="value"><span id="countdown_sec">0</span></div><button href="javascript:;" class="button icon_down" action="countdown_second_down" interval="400"><span class="inner"></span></button></div></div></div><div class="action_bar">
+    <button href="javascript:;" class="button confirm" action="countdown_start">Start</button>
+    <button href="javascript:;" class="button cancel" action="hide_dialog">Cancel</button>
+</div>
+        </div>
+    </div>
+</div><div id="options" class="dialog_container">
+    <div class="options dialog">
+        <div class="dialog_titlebar">
+            <button action="hide_dialog" class="close button button_right">x</button>
+            <h2>Options</h2>
+        </div>
+        <div class="dialog_content">
+            <div class="toggle" data-binding="timeMode" data-value="12hr">
+	<div class="options">
+	    <button data-value="12hr" class="option toggle_left active">12 Hr</button>
+	    <button data-value="24hr" class="option toggle_right ">24 Hr</button>
+	</div>
+	<div class="label">Set Mode</div>
+</div>
+
+<div class="toggle" data-binding="showSeconds" data-value="false">
+	<div class="options">
+	    <button data-value="true" class="option toggle_left ">Yes</button>
+	    <button data-value="false" class="option toggle_right active">No</button>
+	</div>
+	<div class="label">Show Seconds</div>
+</div>
+
+<div class="toggle" data-binding="font" data-value="default">
+	<div class="options">
+	    <button data-value="default" class="option toggle_left active">1</button>
+	    <button data-value="sahara" class="option toggle_right ">2</button>
+	</div>
+	<div class="label">Font</div>
+</div>
+
+<div class="action_bar">
+    <button class="button confirm" action="save_settings">Save</button>
+    <button class="button cancel" action="hide_settings">Cancel</button>
+</div>
+
+        </div>
+    </div>
+</div><div id="about" class="dialog_container">
+    <div class="about dialog">
+        <div class="dialog_titlebar">
+            <button action="hide_dialog" class="close button button_right">x</button>
+            <h2>About</h2>
+        </div>
+        <div class="dialog_content">
+            <div class="name">FlipClock</div>
+<div class="version">Version 2.2</div>
+<div class="icon"></div>
+<div class="copyright">Copyright 2011-2024 <a href="http://john.sh/">John Roepke</a></div>
+
+        </div>
+    </div>
+</div></body></html>

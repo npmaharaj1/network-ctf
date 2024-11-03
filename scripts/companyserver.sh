@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Routing Table
-ip addr add 192.168.1.47/24 dev eth1
+ip addr add 192.168.1.167/24 dev eth1
 ip link set eth1 up
 
 ip route del default via 172.20.20.1 dev eth0
