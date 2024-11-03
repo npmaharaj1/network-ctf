@@ -7,14 +7,16 @@
     height: 90vh;
 }
 
-#inboxMessage {
+.inboxMessage {
     border: 2px solid green;
     padding: 0;
-    margin: 0;
+    margin-right: 6vw;
     width: 40vw;
     height: 90vh;
 
     float: right;
+
+    opacity: 0;
 }
 
 .message {
@@ -28,4 +30,13 @@
 .category {
     margin: 3%;
     border-bottom: 2px solid grey;
+}
+
+#unreadMail {
+    margin-left: 3%;
+}
+
+.messageContent {
+    margin-left: 3%;
+    margin-right: 3%;
 }
