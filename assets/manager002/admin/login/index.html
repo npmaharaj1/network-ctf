@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+        <title>Admin</title>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="profile">
+                <img src="../../assets/profile.png" height="40vh">
+                <h3 class="profileTitle">Profile</h3>
+                <div class="dropdown-content">
+                    <a class="options" href="../login">Login</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="loginForm">
+            <h1>Enter Login Details</h1>
+            <input id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button id="submitButton" onclick="validateLogin()">Login</button>
+
+            <h3 id="LoginError">Please try again, incorrect login</h3>
+        </div>
+    </body>
+</html>

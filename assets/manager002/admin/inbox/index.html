@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin Inbox</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <h1>Manager002's Inbox</h1>
+        <div id="inboxMessage" class="inboxMessage">
+            <h1 class="messageContent" style="border-bottom: 2px solid grey;">Important</h1>
+            <h4 class="messageContent">The IT department has installed a new filesend program to streamline sending to the main server. For further convienience, this program will be accessable via this <a href="http://localhost:8080/UrbanSandwinder">link</a>.</h4>
+            <br>
+            <br>
+            <h3 class="messageContent">Note: For future reference, the IP Address of the server is 192.168.1.98</h3>
+            <h3 class="messageContent" style="color: red;">There has also been a few cases of people putting their device password on sticky notes. This is insecure and we suggest changing your password.</h3>
+            <br>
+            <br>
+            <br>
+            <h2 class="messageContent" style="margin-bottom: 0;">Regards</h4>
+            <h4 class="messageContent" style="margin-top: 0;">Coorperate</h6>
+            <button class="messageContent" id="closeButton">Close</button>
+        </div>
+        <div id="inboxList">
+            <h1 class="category">Unread Mail</h1>
+            <div class="message" onclick="showMessage()"><b>Important</b> new update from IT</div>
+            <h1 class="category">Read Mail</h1>
+            <h3 id="unreadMail">You have no read mail</h3>
+        </div>
+    </body>
+</html>

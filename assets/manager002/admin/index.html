@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+        <title>Admin</title>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="profile">
+                <img src="../assets/profile.png" height="40vh">
+                <h3 class="profileTitle">Profile</h3>
+                <div class="dropdown-content">
+                    <a class="options" href="inbox">Inbox</a>
+                    <a class="options" href="logout">Logout</a>
+                </div>
+            </div>
+        </div>
+        <h1 id="title">Welcome to the supervisor dashboard</h1>
+
+        <div id="calendar">
+            <h2 id="calendar-title">Daily Schedule</h2>
+            <h4 class="time">06:00</h4>
+            <div class="timeblock" style="height: 3vh; background-color: blue;"><h4 class="eventText">Morning Routine</h4></div>
+            <h4 class="time">07:50</h4>
+            <div class="timeblock" style="height: 5vh; background-color: purple;"><h4 class="eventText">Commute</h4></div>
+            <h4 class="time">08:30</h4>
+            <div class="timeblock" style="height: 3vh; background-color: brown;"><h4 class="eventText">Morning Coffee</h4></div>
+            <h4 class="time">09:00</h4>
+            <div class="timeblock" style="height: 8vh; background-color: red;"><h4 class="eventText">Work</h4></div>
+            <h4 class="time">12:30</h4>
+            <div class="timeblock" style="height: 3vh; background-color: grey;"><h4 class="eventText">Lunch</h4></div>
+            <h4 class="time">13:00</h4>
+            <div class="timeblock" style="height: 8vh; background-color: red;"><h4 class="eventText">Work</h4></div>
+            <h4 class="time">17:30</h4>
+            <div class="timeblock" style="height: 5vh; background-color: purple;"><h4 class="eventText">Commute</h4></div>
+            <h4 class="time">18:40</h4>
+            <div class="timeblock" style="height: 3vh; background-color: blue;"><h4 class="eventText">Dinner</h4></div>
+        </div>
+        <div id="clock">
+            <embed type="text/html" src="https://flipclock.us/" width="500" height="200"> 
+        </div>
+        <div id="inspiration">
+            <!-- <img src="https://zenquotes.io/api/image" id="quote"></h3> -->
+        </div>
+        <div id="todays-shift">
+            <h1 class="shiftContent">Today's Shift</h1>
+            <h3 class="shiftContent" style="margin-top: 0;">Manager002</h3>
+            <h1 class="shift-time" id="today1" style="margin-top: 2vh"></h1>
+            <h1 class="shift-time">09:00</h1>
+            <h1 class="shift-time">-</h1>
+            <h1 class="shift-time" id="today2"></h1>
+            <h1 class="shift-time">17:00</h1>
+        </div>
+    </body>
+</html>
