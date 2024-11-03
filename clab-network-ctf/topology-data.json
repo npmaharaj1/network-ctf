@@ -6,7 +6,7 @@
       "prefix": "clab",
       "mgmt": {
         "network": "clab",
-        "bridge": "br-c29dc53126ee",
+        "bridge": "br-1344ea7361f9",
         "ipv4-subnet": "172.20.20.0/24",
         "ipv4-gw": "172.20.20.1",
         "ipv6-subnet": "3fff:172:20:20::/64",
@@ -28,13 +28,13 @@
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-address": "172.20.20.4",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::3",
+      "mgmt-ipv6-address": "3fff:172:20:20::4",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-c29dc53126ee",
+        "clab-mgmt-net-bridge": "br-1344ea7361f9",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/nishant/Projects/network-ctf/clab-network-ctf/companyserver",
@@ -58,13 +58,13 @@
       "image": "frrouting/frr:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.6",
+      "mgmt-ipv4-address": "172.20.20.3",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::6",
+      "mgmt-ipv6-address": "3fff:172:20:20::3",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-c29dc53126ee",
+        "clab-mgmt-net-bridge": "br-1344ea7361f9",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/nishant/Projects/network-ctf/clab-network-ctf/frrouting",
@@ -77,8 +77,38 @@
       "port-bindings": [
       ]
     },
-    "itadmin": {
+    "highervswitch": {
       "index": "2",
+      "shortname": "highervswitch",
+      "longname": "clab-network-ctf-highervswitch",
+      "fqdn": "highervswitch.network-ctf.io",
+      "group": "",
+      "labdir": "/home/nishant/Projects/network-ctf/clab-network-ctf/highervswitch",
+      "kind": "linux",
+      "image": "alpine",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.5",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::5",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-1344ea7361f9",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/nishant/Projects/network-ctf/clab-network-ctf/highervswitch",
+        "clab-node-name": "highervswitch",
+        "clab-node-type": "",
+        "clab-owner": "nishant",
+        "clab-topo-file": "/home/nishant/Projects/network-ctf/clab_topology.yml",
+        "containerlab": "network-ctf"
+      },
+      "port-bindings": [
+      ]
+    },
+    "itadmin": {
+      "index": "3",
       "shortname": "itadmin",
       "longname": "clab-network-ctf-itadmin",
       "fqdn": "itadmin.network-ctf.io",
@@ -88,13 +118,13 @@
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.5",
+      "mgmt-ipv4-address": "172.20.20.9",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::5",
+      "mgmt-ipv6-address": "3fff:172:20:20::9",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-c29dc53126ee",
+        "clab-mgmt-net-bridge": "br-1344ea7361f9",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/nishant/Projects/network-ctf/clab-network-ctf/itadmin",
@@ -107,8 +137,38 @@
       "port-bindings": [
       ]
     },
+    "itvswitch": {
+      "index": "4",
+      "shortname": "itvswitch",
+      "longname": "clab-network-ctf-itvswitch",
+      "fqdn": "itvswitch.network-ctf.io",
+      "group": "",
+      "labdir": "/home/nishant/Projects/network-ctf/clab-network-ctf/itvswitch",
+      "kind": "linux",
+      "image": "alpine",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.6",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::6",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-1344ea7361f9",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/nishant/Projects/network-ctf/clab-network-ctf/itvswitch",
+        "clab-node-name": "itvswitch",
+        "clab-node-type": "",
+        "clab-owner": "nishant",
+        "clab-topo-file": "/home/nishant/Projects/network-ctf/clab_topology.yml",
+        "containerlab": "network-ctf"
+      },
+      "port-bindings": [
+      ]
+    },
     "shiftmanager002": {
-      "index": "3",
+      "index": "5",
       "shortname": "shiftmanager002",
       "longname": "clab-network-ctf-shiftmanager002",
       "fqdn": "shiftmanager002.network-ctf.io",
@@ -118,13 +178,13 @@
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.4",
+      "mgmt-ipv4-address": "172.20.20.2",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::4",
+      "mgmt-ipv6-address": "3fff:172:20:20::2",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-c29dc53126ee",
+        "clab-mgmt-net-bridge": "br-1344ea7361f9",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/nishant/Projects/network-ctf/clab-network-ctf/shiftmanager002",
@@ -138,7 +198,7 @@
       ]
     },
     "worker504": {
-      "index": "4",
+      "index": "6",
       "shortname": "worker504",
       "longname": "clab-network-ctf-worker504",
       "fqdn": "worker504.network-ctf.io",
@@ -148,17 +208,47 @@
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-address": "172.20.20.8",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::2",
+      "mgmt-ipv6-address": "3fff:172:20:20::8",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-c29dc53126ee",
+        "clab-mgmt-net-bridge": "br-1344ea7361f9",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/nishant/Projects/network-ctf/clab-network-ctf/worker504",
         "clab-node-name": "worker504",
+        "clab-node-type": "",
+        "clab-owner": "nishant",
+        "clab-topo-file": "/home/nishant/Projects/network-ctf/clab_topology.yml",
+        "containerlab": "network-ctf"
+      },
+      "port-bindings": [
+      ]
+    },
+    "workervswitch": {
+      "index": "7",
+      "shortname": "workervswitch",
+      "longname": "clab-network-ctf-workervswitch",
+      "fqdn": "workervswitch.network-ctf.io",
+      "group": "",
+      "labdir": "/home/nishant/Projects/network-ctf/clab-network-ctf/workervswitch",
+      "kind": "linux",
+      "image": "alpine",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.7",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::7",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-1344ea7361f9",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/nishant/Projects/network-ctf/clab-network-ctf/workervswitch",
+        "clab-node-name": "workervswitch",
         "clab-node-type": "",
         "clab-owner": "nishant",
         "clab-topo-file": "/home/nishant/Projects/network-ctf/clab_topology.yml",
@@ -173,13 +263,13 @@
       "a": {
         "node": "frrouting",
         "interface": "eth1",
-        "mac": "aa:c1:ab:10:98:6a",
+        "mac": "aa:c1:ab:da:72:19",
         "peer": "z"
       },
       "z": {
-        "node": "worker504",
+        "node": "workervswitch",
         "interface": "eth1",
-        "mac": "aa:c1:ab:ff:f3:15",
+        "mac": "aa:c1:ab:6c:c0:58",
         "peer": "a"
       }
     },
@@ -187,13 +277,13 @@
       "a": {
         "node": "frrouting",
         "interface": "eth2",
-        "mac": "aa:c1:ab:ee:de:79",
+        "mac": "aa:c1:ab:b9:0b:39",
         "peer": "z"
       },
       "z": {
-        "node": "shiftmanager002",
+        "node": "highervswitch",
         "interface": "eth1",
-        "mac": "aa:c1:ab:6b:cd:21",
+        "mac": "aa:c1:ab:a4:29:90",
         "peer": "a"
       }
     },
@@ -201,27 +291,69 @@
       "a": {
         "node": "frrouting",
         "interface": "eth3",
-        "mac": "aa:c1:ab:e9:1e:1b",
+        "mac": "aa:c1:ab:46:b2:50",
         "peer": "z"
       },
       "z": {
-        "node": "companyserver",
+        "node": "itvswitch",
         "interface": "eth1",
-        "mac": "aa:c1:ab:fd:c2:e5",
+        "mac": "aa:c1:ab:5d:ac:27",
         "peer": "a"
       }
     },
     {
       "a": {
-        "node": "frrouting",
-        "interface": "eth4",
-        "mac": "aa:c1:ab:43:d7:f2",
+        "node": "workervswitch",
+        "interface": "eth2",
+        "mac": "aa:c1:ab:96:c3:9e",
+        "peer": "z"
+      },
+      "z": {
+        "node": "worker504",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:4d:72:01",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "highervswitch",
+        "interface": "eth2",
+        "mac": "aa:c1:ab:a8:4e:b1",
+        "peer": "z"
+      },
+      "z": {
+        "node": "shiftmanager002",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:f6:7c:38",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "itvswitch",
+        "interface": "eth2",
+        "mac": "aa:c1:ab:a1:c9:1b",
+        "peer": "z"
+      },
+      "z": {
+        "node": "companyserver",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:5d:ad:d0",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "itvswitch",
+        "interface": "eth3",
+        "mac": "aa:c1:ab:05:9d:4f",
         "peer": "z"
       },
       "z": {
         "node": "itadmin",
         "interface": "eth1",
-        "mac": "aa:c1:ab:14:35:ed",
+        "mac": "aa:c1:ab:2c:59:82",
         "peer": "a"
       }
     }

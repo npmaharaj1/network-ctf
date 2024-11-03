@@ -1,0 +1,31 @@
+#inboxList {
+    border: 2px solid red;
+
+    padding: 0;
+    margin: 0;
+    width: 40vw;
+    height: 90vh;
+}
+
+#inboxMessage {
+    border: 2px solid green;
+    padding: 0;
+    margin: 0;
+    width: 40vw;
+    height: 90vh;
+
+    float: right;
+}
+
+.message {
+    margin: 3%;
+    background-image: linear-gradient(to right, lightgrey , white);
+    padding: 10px;
+    cursor: pointer;
+    
+}
+
+.category {
+    margin: 3%;
+    border-bottom: 2px solid grey;
+}

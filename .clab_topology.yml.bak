@@ -1,47 +1,97 @@
 name: network-ctf
 
 topology:
-    nodes:
+  nodes:
+    worker504:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - sh /scripts/alpinegeneralsetup.sh
+        - sh /scripts/worker504init.sh
+      binds:
+        - ./scripts:/scripts
+    shiftmanager002:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - sh /scripts/alpinegeneralsetup.sh
+        - sh /scripts/shiftmanager002.sh
+      binds:
+        - ./scripts:/scripts
+    companyserver:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - sh /scripts/alpinegeneralsetup.sh
+      binds:
+        - ./scripts:/scripts
+    itadmin:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - sh /scripts/alpinegeneralsetup.sh
+      binds:
+        - ./scripts:/scripts 
+    workervswitch:
+      kind: linux
+      image: alpine
+      exec: 
+        - apk update
+        - apk add bash openvswitch
+        - mkdir -p /var/run/openvswitch
+        - mkdir -p /etc/openvswitch
+        - ovsdb-tool create /etc/openvswitch/conf.db /usr/share/openvswitch/vswitch.ovsschema
+        - ovsdb-server --remote=punix:/var/run/openvswitch/db.sock --remote=db:Open_vSwitch,Open_vSwitch,manager_options --pidfile --detach
+        - ovs-vswitchd --pidfile --detach
+        - ovs-vsctl add-br br0
+        - ovs-vsctl add-port br0 eth1
+        - ovs-vsctl add-port br0 eth2
+        - ovs-vsctl add-port br0 eth3
+    highervswitch:
+      kind: linux
+      image: alpine
+      exec: 
+        - apk update
+        - apk add bash openvswitch
+        - mkdir -p /var/run/openvswitch
+        - mkdir -p /etc/openvswitch
+        - ovsdb-tool create /etc/openvswitch/conf.db /usr/share/openvswitch/vswitch.ovsschema
+        - ovsdb-server --remote=punix:/var/run/openvswitch/db.sock --remote=db:Open_vSwitch,Open_vSwitch,manager_options --pidfile --detach
+        - ovs-vswitchd --pidfile --detach
+        - ovs-vsctl add-br br0
+        - ovs-vsctl add-port br0 eth1
+        - ovs-vsctl add-port br0 eth2
+        - ovs-vsctl add-port br0 eth3
+    itvswitch:
+      kind: linux
+      image: alpine
+      exec: 
+        - apk update
+        - apk add bash openvswitch
+        - mkdir -p /var/run/openvswitch
+        - mkdir -p /etc/openvswitch
+        - ovsdb-tool create /etc/openvswitch/conf.db /usr/share/openvswitch/vswitch.ovsschema
+        - ovsdb-server --remote=punix:/var/run/openvswitch/db.sock --remote=db:Open_vSwitch,Open_vSwitch,manager_options --pidfile --detach
+        - ovs-vswitchd --pidfile --detach
+        - ovs-vsctl add-br br0
+        - ovs-vsctl add-port br0 eth1
+        - ovs-vsctl add-port br0 eth2
+        - ovs-vsctl add-port br0 eth3
+
       # Networking
-        frrouting:
-            kind: linux
-            image: frrouting/frr:latest
-            exec:
-              - sh /scripts/routerinit.sh
-            binds:
-              - ./scripts:/scripts
-        
-        # Computing
-        worker504:
-            kind: linux
-            image: alpine:latest
-            exec:
-              - sh /scripts/alpinegeneralsetup.sh
-            binds:
-              - ./scripts:/scripts
-        shiftmanager002:
-            kind: linux
-            image: alpine:latest
-            exec:
-              - sh /scripts/alpinegeneralsetup.sh
-            binds:
-              - ./scripts:/scripts
-        companyserver:
-            kind: linux
-            image: alpine:latest
-            exec:
-              - sh /scripts/alpinegeneralsetup.sh
-            binds:
-              - ./scripts:/scripts
-        itadmin:
-            kind: linux
-            image: alpine:latest
-            exec:
-              - sh /scripts/alpinegeneralsetup.sh
-            binds:
-              - ./scripts:/scripts 
-    links:
-        - endpoints: ['frrouting:eth1', 'worker504:eth1']
-        - endpoints: ['frrouting:eth2', 'shiftmanager002:eth1']
-        - endpoints: ['frrouting:eth3', 'companyserver:eth1']
-        - endpoints: ['frrouting:eth4', 'itadmin:eth1']
+    frrouting:
+      kind: linux
+      image: frrouting/frr:latest
+      exec:
+        - sh /scripts/routerinit.sh
+      binds:
+        - ./scripts:/scripts
+  links:
+    - endpoints: ['frrouting:eth1', 'workervswitch:eth1']
+    - endpoints: ['frrouting:eth2', 'highervswitch:eth1']
+    - endpoints: ['frrouting:eth3', 'itvswitch:eth1']
+
+    - endpoints: ['workervswitch:eth2', 'worker504:eth1']
+    - endpoints: ['highervswitch:eth2', 'shiftmanager002:eth1']
+    - endpoints: ['itvswitch:eth2', 'companyserver:eth1']
+    - endpoints: ['itvswitch:eth3', 'itadmin:eth1']
