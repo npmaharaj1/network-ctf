@@ -4,36 +4,47 @@ topology:
   nodes:
     worker504:
       kind: linux
-      image: alpine:latest
+      image: ubuntu
       exec:
-        - sh /scripts/alpinegeneralsetup.sh
         - sh /scripts/worker504init.sh
       binds:
         - ./scripts:/scripts
+      ports:
+        - "2222:22"
     shiftmanager002:
       kind: linux
-      image: alpine:latest
+      image: ubuntu
       exec:
-        - sh /scripts/alpinegeneralsetup.sh
         - sh /scripts/shiftmanager002.sh
       binds:
         - ./scripts:/scripts
+        - ./assets/manager002/admin:/var/www/html/
+      ports:
+        - "8132:80"
     companyserver:
       kind: linux
-      image: alpine:latest
+      image: ubuntu
       exec:
-        - sh /scripts/alpinegeneralsetup.sh
-        - sh /scripts/companyserver.sh
+        - sh /scripts/companyserversetup.sh
+        - bash /scripts/flaskrunner.sh
       binds:
         - ./scripts:/scripts
+        - ./assets/companyserver:/assets
+        - ./assets/companyserver/static/uploads:/uploads
+      ports:
+        - "5738:5000"
+        - "4444:4444"
+      env:
+        FLASK_ENV: development
     itadmin:
       kind: linux
-      image: alpine:latest
+      image: ubuntu
       exec:
-        - sh /scripts/alpinegeneralsetup.sh
         - sh /scripts/itadmin.sh
       binds:
         - ./scripts:/scripts 
+        - ./assets/itadmin/sudoers:/etc/sudoers
+        - /var/run/docker.sock:/var/run/docker.sock
     workervswitch:
       kind: linux
       image: alpine

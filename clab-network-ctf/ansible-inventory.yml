@@ -8,18 +8,18 @@ all:
     linux:
       hosts:
         clab-network-ctf-companyserver:
-          ansible_host: 172.20.20.3
-        clab-network-ctf-frrouting:
-          ansible_host: 172.20.20.4
-        clab-network-ctf-highervswitch:
-          ansible_host: 172.20.20.7
-        clab-network-ctf-itadmin:
-          ansible_host: 172.20.20.8
-        clab-network-ctf-itvswitch:
           ansible_host: 172.20.20.6
-        clab-network-ctf-shiftmanager002:
-          ansible_host: 172.20.20.2
-        clab-network-ctf-worker504:
+        clab-network-ctf-frrouting:
           ansible_host: 172.20.20.5
-        clab-network-ctf-workervswitch:
+        clab-network-ctf-highervswitch:
+          ansible_host: 172.20.20.8
+        clab-network-ctf-itadmin:
+          ansible_host: 172.20.20.3
+        clab-network-ctf-itvswitch:
           ansible_host: 172.20.20.9
+        clab-network-ctf-shiftmanager002:
+          ansible_host: 172.20.20.7
+        clab-network-ctf-worker504:
+          ansible_host: 172.20.20.4
+        clab-network-ctf-workervswitch:
+          ansible_host: 172.20.20.2

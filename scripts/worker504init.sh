@@ -1,5 +1,15 @@
 #!/bin/bash
 
+export DEBIAN_FRONTEND=noninteractive
+export TERM=xterm-256color
+
+# General Setup
+apt update
+apt install iproute2 bash apache2 netcat-traditional curl vim -y
+
+# Setup root
+echo "root:welcome" | chpasswd
+
 # Routing Table
 ip addr add 192.168.1.23/24 dev eth1
 ip link set eth1 up

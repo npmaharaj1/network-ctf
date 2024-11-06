@@ -1,5 +1,9 @@
 #!/bin/bash
 
+apt update
+apt install apache2 vim iproute2 python3 pip python3.12-venv -y
+service apache2 start
+
 # Routing Table
 ip addr add 192.168.1.47/24 dev eth1
 ip link set eth1 up

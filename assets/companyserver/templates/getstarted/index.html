@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='getstarted.css') }}">
+</head>
+<body>
+    <div class="titleDiv">
+        <h1 class="headingText" id="headingText">Transfer file to server</h1>
+    </div>
+
+    <div class="wholeBar">
+        <div class="moveBar">Step 1</div>
+    </div>
+    <div class="upload-container">
+        <div class="uploadBorder" id="uploadBorder">
+            <div class="arrowAssetContainer">
+                <img class="arrowAsset" src="{{ url_for('static', filename='assets/Arrow.png') }}">
+            </div>
+            <h1 class="uploadText" id="subText">Click or Drag and Drop</h1>
+            <h1 class="uploadText" id="subText1" style="margin-top: 0;">to Upload</h1>
+            <h1 class="fileList" id="fileList"> </h1>
+        </div>
+        <form method="post" action="/upload" enctype="multipart/form-data" id="uploader">
+            <input type="file" name="file" class="overlap" id="overlap" accept="*/*" required />
+        </form>
+    </div>
+    <input type="submit" value="Upload" form="uploader" id="blueButton">
+</body>
+</html>

@@ -1,0 +1,148 @@
+.viewMode {
+    position: absolute;
+    right: 2%;
+}
+
+body {
+    background: rgb(20, 11, 51);
+    color: whitesmoke;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 10px;
+}
+
+.titleDiv {
+    height: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 0;
+    text-align: center;
+}
+
+.headingText {
+    color: whitesmoke;
+}
+
+.wholeBar {
+    background-color: grey;
+    width: 95%;
+
+    margin-left: 10;
+}
+
+.moveBar {
+    background-color: green;
+    width: 33%;
+    text-align: center;
+}
+
+.uploadBorder {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 95%;
+    height: 70vh;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    background-color: rgba(125, 125, 125, 0.1);
+
+    border: 5px dashed grey ;
+}
+
+.arrowAsset {
+    width: 15vh;
+}
+
+.uploadText {
+    margin: 0;
+    margin-top: 15px;
+    padding: 0;
+
+    font-size: 25px;
+}
+
+.blueButton {
+    background-color: blue;
+    color: white;
+
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+
+    position: absolute;
+    bottom: 5%;
+    width: 10%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.blueButton:hover {
+    background-color: darkblue;
+}
+
+.custom-button {
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+
+    width: 95%;
+    height: 70vh;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.upload-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+}
+
+.overlap {
+    opacity: 0;
+
+    width: 95%;
+    height: 70vh;
+    position: absolute;
+    top: 3%;
+    bottom: 3%;
+    cursor: pointer;
+}
+
+form {
+    position: absolute;
+
+    width: 95%;
+    height: 70vh;
+    top: 3%;
+}
+
+.fileList {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    font-size: medium;
+}
+
+#submit {
+    position: absolute;
+    bottom: 10px;
+}
