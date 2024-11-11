@@ -43,6 +43,7 @@ It looks like we immedietly get redirected to a permission denied page. Even if 
 ...to no avail. It seams that while the websites page is exposing itself, it still has some layer of protection. Let's look at the pages javascript code and see if there's anything valuable
 ```
 Press the F12 key or CTRL + SHIFT + I combination to open the inspector console and go to the "Debugger" tab > Main Thread > localhost:8132 > login > script.js. After some analysis, it looks like whoever set up this authentication portal, didn't use server side authentication and instead used client side.
+```
 
 <b>Client side authentication vs Server side authentication. What is it and why does it matter?</b>
 There are two ways of authentication in modern systems. As said above they can either be validated on the client side or server side. Server side authentication occurs when the user enters the login data and sends it to the server for processing which means that the client (whoever is using the website) cannot see the result until the results from the server are sent back. Client side authentication is when the client (person using the website) validates the data and lets itself it. A simpler analogy is someone going to a friends house. Server side authentication can be though of going to the friends house and asking if they can come in. If the friend says yes, they can enter. However client side authentication is when the person goes to the friends house and goes "yeah I'm his friend, I'm going to let myself in".
