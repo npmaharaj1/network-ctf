@@ -20,4 +20,4 @@ sudo docker exec -it clab-network-ctf-worker504 bash
 ```
 
 To start off with, we'll look in our home directory. We as the attackers already have full access to the system (root). Here's the topology of our environmnet from some previous enumeration.
-<img src="../assets/readme/topology.png">  
+<img src="/assets/readme/topology.png">  
